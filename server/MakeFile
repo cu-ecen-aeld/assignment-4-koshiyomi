@@ -1,0 +1,14 @@
+CC=gcc
+CROSS_COMPILE=arm-linux-gnueabihf-
+TARGET=aesdsocket
+SRC=aesdsocket.c
+
+all: $(TARGET)
+
+default: $(TARGET)
+
+$(TARGET): $(SRC)
+    $(CROSS_COMPILE)$CC -o $(TARGET) $^
+
+clean:
+    rm -f $(TARGET)
